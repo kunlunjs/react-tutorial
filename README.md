@@ -1,1 +1,3 @@
-# redux-tutorial
+# react-tutorial
+
+- [Redux](./REDUX.md)

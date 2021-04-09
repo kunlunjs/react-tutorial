@@ -6,8 +6,6 @@ module.exports = {
   env: {
     es6: true,
     jest: true,
-    // 如果不需要，可以卸载 eslint-plugin-node 和 eslint-plugin-promise 依赖
-    // 如果是NodeJs项目建议在 package.json 中开启 engine 的限制
     node: true,
     browser: true
   },
@@ -20,6 +18,10 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/no-unused-vars': 0,
+    '@typescript-eslint/consistent-indexed-object-style': 1,
+    '@typescript-eslint/consistent-type-assertions': 0,
+    '@typescript-eslint/consistent-type-definitions': 0,
+    '@typescript-eslint/consistent-type-imports': 1,
     'jsx-a11y/anchor-is-valid': 0
   }
   // overrides: [
