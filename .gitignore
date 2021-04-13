@@ -20,5 +20,6 @@ yarn-error.log*
 *.sln
 *.sw*
 
+examples/**/build
 examples/**/dist
 examples/**/node_modules

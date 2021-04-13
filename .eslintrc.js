@@ -1,45 +1,50 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2020
+    ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
+    sourceType: 'module', // Allows for the use of imports
+    ecmaFeatures: {
+      jsx: true // Allows for the parsing of JSX
+    }
   },
   env: {
     es6: true,
     jest: true,
     node: true,
+    mocha: true,
     browser: true
   },
   extends: [
     'eslint:recommended',
+    'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
     'plugin:@typescript-eslint/recommended',
+    // https://github.com/prettier/eslint-config-prettier/blob/main/CHANGELOG.md#version-800-2021-02-21
+    'prettier',
+    // Note: Please keep this as the last config to make sure that this (and by extension our .prettierrc file) overrides all configuration above it
+    // https://www.npmjs.com/package/eslint-plugin-prettier#recommended-configuration
     'plugin:prettier/recommended'
   ],
-  plugins: ['@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks'],
   rules: {
-    '@typescript-eslint/explicit-module-boundary-types': 0,
-    '@typescript-eslint/no-unused-vars': 0,
     '@typescript-eslint/consistent-indexed-object-style': 1,
     '@typescript-eslint/consistent-type-assertions': 0,
     '@typescript-eslint/consistent-type-definitions': 0,
     '@typescript-eslint/consistent-type-imports': 1,
-    'jsx-a11y/anchor-is-valid': 0
+    '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/no-unused-vars': 0,
+    '@typescript-eslint/no-use-before-define': 0,
+    '@typescript-eslint/no-var-requires': 0,
+    'react-hooks/rules-of-hooks': 'error',
+    'import/no-webpack-loader-syntax': 0,
+    'react/prop-types': 0,
+    'react/react-in-jsx-scope': 0
+  },
+  settings: {
+    react: {
+      pragma: 'React',
+      // Tells eslint-plugin-react to automatically detect the version of React to use
+      version: 'detect'
+    }
   }
-  // overrides: [
-  //   {
-  //     files: ['config/*.js'],
-  //     rules: {
-  //       'import/no-commonjs': 'off',
-  //     },
-  //   },
-  // ],
-  // settings: {
-  //   react: {
-  //     pragma: 'React',
-  //     // React version. 'detect' automatically picks the version you have installed.
-  //     // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
-  //     // default to latest and warns if missing
-  //     // It will default to 'detect' in the future
-  //     version: 'detect',
-  //   }
-  // }
 }

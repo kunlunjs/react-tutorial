@@ -8,18 +8,25 @@ specifiers:
   devmoji: ^2.2.0
   eslint: ^7.23.0
   eslint-config-prettier: ^8.1.0
+  eslint-config-react: ^1.1.7
   eslint-plugin-import: ^2.22.1
   eslint-plugin-jsx-a11y: ^6.4.1
   eslint-plugin-node: ^11.1.0
   eslint-plugin-prettier: ^3.3.1
   eslint-plugin-promise: ^4.3.1
+  eslint-plugin-react: ^7.23.2
+  eslint-plugin-react-hooks: ^4.2.0
   husky: ^6.0.0
   jest: ^26.6.3
   lint-staged: ^10.5.4
   prettier: ^2.2.1
+  redux-saga: ^1.1.3
   stylelint: ^13.12.0
   stylelint-config-standard: ^21.0.0
   typescript: ^4.2.4
+
+dependencies:
+  redux-saga: 1.1.3
 
 devDependencies:
   '@commitlint/cli': 12.1.1
@@ -29,11 +36,14 @@ devDependencies:
   devmoji: 2.2.0
   eslint: 7.23.0
   eslint-config-prettier: 8.1.0_eslint@7.23.0
+  eslint-config-react: 1.1.7
   eslint-plugin-import: 2.22.1_eslint@7.23.0
   eslint-plugin-jsx-a11y: 6.4.1_eslint@7.23.0
   eslint-plugin-node: 11.1.0_eslint@7.23.0
   eslint-plugin-prettier: 3.3.1_b12b1e2728f2b373ebd5879b14325d0d
   eslint-plugin-promise: 4.3.1
+  eslint-plugin-react: 7.23.2_eslint@7.23.0
+  eslint-plugin-react-hooks: 4.2.0_eslint@7.23.0
   husky: 6.0.0
   jest: 26.6.3
   lint-staged: 10.5.4
@@ -328,7 +338,6 @@ packages:
     resolution: {integrity: sha1-R9QqV7YJX0Ro2kQDiP262L6/DX0=, tarball: '@babel/runtime/download/@babel/runtime-7.13.10.tgz?cache=0&sync_timestamp=1615255863921&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.13.10.tgz'}
     dependencies:
       regenerator-runtime: 0.13.7
-    dev: true
 
   /@babel/template/7.12.13:
     resolution: {integrity: sha1-UwJlvooliduzdSOETFvLVZR/syc=, tarball: '@babel/template/download/@babel/template-7.12.13.tgz'}
@@ -753,6 +762,44 @@ packages:
       '@nodelib/fs.scandir': 2.1.4
       fastq: 1.11.0
     dev: true
+
+  /@redux-saga/core/1.1.3:
+    resolution: {integrity: sha1-MIUJe1ek6o21Uo1YZz8gzglQ9qQ=, tarball: '@redux-saga/core/download/@redux-saga/core-1.1.3.tgz'}
+    dependencies:
+      '@babel/runtime': 7.13.10
+      '@redux-saga/deferred': 1.1.2
+      '@redux-saga/delay-p': 1.1.2
+      '@redux-saga/is': 1.1.2
+      '@redux-saga/symbols': 1.1.2
+      '@redux-saga/types': 1.1.0
+      redux: 4.0.5
+      typescript-tuple: 2.2.1
+    dev: false
+
+  /@redux-saga/deferred/1.1.2:
+    resolution: {integrity: sha1-WZN6Drpx//KJ8TECM7xRgRenGIg=, tarball: '@redux-saga/deferred/download/@redux-saga/deferred-1.1.2.tgz'}
+    dev: false
+
+  /@redux-saga/delay-p/1.1.2:
+    resolution: {integrity: sha1-j1FfSwCbBbAqN6fD0Mqd3BV7s1U=, tarball: '@redux-saga/delay-p/download/@redux-saga/delay-p-1.1.2.tgz'}
+    dependencies:
+      '@redux-saga/symbols': 1.1.2
+    dev: false
+
+  /@redux-saga/is/1.1.2:
+    resolution: {integrity: sha1-rmyEIfWPy6gPr3ytt9ZbMDuX5Y4=, tarball: '@redux-saga/is/download/@redux-saga/is-1.1.2.tgz'}
+    dependencies:
+      '@redux-saga/symbols': 1.1.2
+      '@redux-saga/types': 1.1.0
+    dev: false
+
+  /@redux-saga/symbols/1.1.2:
+    resolution: {integrity: sha1-IWpnKkh/wlaHK4A0g1r8IqLQWV0=, tarball: '@redux-saga/symbols/download/@redux-saga/symbols-1.1.2.tgz'}
+    dev: false
+
+  /@redux-saga/types/1.1.0:
+    resolution: {integrity: sha1-DoHOVrSIO0sqMAHr4aspi4QjcgQ=, tarball: '@redux-saga/types/download/@redux-saga/types-1.1.0.tgz'}
+    dev: false
 
   /@sinonjs/commons/1.8.3:
     resolution: {integrity: sha1-OALd0hpQqUm2ch3dcto25n5/Gy0=, tarball: '@sinonjs/commons/download/@sinonjs/commons-1.8.3.tgz?cache=0&sync_timestamp=1617869569362&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40sinonjs%2Fcommons%2Fdownload%2F%40sinonjs%2Fcommons-1.8.3.tgz'}
@@ -1179,6 +1226,16 @@ packages:
       es-abstract: 1.18.0
     dev: true
 
+  /array.prototype.flatmap/1.2.4:
+    resolution: {integrity: sha1-lM/UfMFVbsB0fZf3x3OMWBIgBMk=, tarball: array.prototype.flatmap/download/array.prototype.flatmap-1.2.4.tgz}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: 1.0.2
+      define-properties: 1.1.3
+      es-abstract: 1.18.0
+      function-bind: 1.1.1
+    dev: true
+
   /arrify/1.0.1:
     resolution: {integrity: sha1-iYUI2iIm84DfkEcoRWhJwVAaSw0=, tarball: arrify/download/arrify-1.0.1.tgz}
     engines: {node: '>=0.10.0'}
@@ -1282,6 +1339,8 @@ packages:
       '@istanbuljs/schema': 0.1.3
       istanbul-lib-instrument: 4.0.3
       test-exclude: 6.0.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-jest-hoist/26.6.2:
@@ -1393,7 +1452,7 @@ packages:
     dependencies:
       caniuse-lite: 1.0.30001208
       colorette: 1.2.2
-      electron-to-chromium: 1.3.711
+      electron-to-chromium: 1.3.712
       escalade: 3.1.1
       node-releases: 1.1.71
     dev: true
@@ -1892,6 +1951,13 @@ packages:
       isarray: 1.0.0
     dev: true
 
+  /doctrine/2.1.0:
+    resolution: {integrity: sha1-XNAfwQFiG0LEzX9dGmYkNxbT850=, tarball: doctrine/download/doctrine-2.1.0.tgz}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      esutils: 2.0.3
+    dev: true
+
   /doctrine/3.0.0:
     resolution: {integrity: sha1-rd6+rXKmV023g2OdyHoSF3OXOWE=, tarball: doctrine/download/doctrine-3.0.0.tgz}
     engines: {node: '>=6.0.0'}
@@ -1948,8 +2014,8 @@ packages:
       safer-buffer: 2.1.2
     dev: true
 
-  /electron-to-chromium/1.3.711:
-    resolution: {integrity: sha1-ksPK9//tXhi/Y/ZrS1e02yQJxFA=, tarball: electron-to-chromium/download/electron-to-chromium-1.3.711.tgz}
+  /electron-to-chromium/1.3.712:
+    resolution: {integrity: sha1-rkZ//l+VlhxtQc7v6Fj8NutTs48=, tarball: electron-to-chromium/download/electron-to-chromium-1.3.712.tgz}
     dev: true
 
   /emittery/0.7.2:
@@ -2060,6 +2126,10 @@ packages:
       eslint: 7.23.0
     dev: true
 
+  /eslint-config-react/1.1.7:
+    resolution: {integrity: sha1-oJGND8R9DpvRYaRzCAIdqF0lhbM=, tarball: eslint-config-react/download/eslint-config-react-1.1.7.tgz}
+    dev: true
+
   /eslint-import-resolver-node/0.3.4:
     resolution: {integrity: sha1-hf+oGULCUBLYIxCW3fZ5wDBCxxc=, tarball: eslint-import-resolver-node/download/eslint-import-resolver-node-0.3.4.tgz}
     dependencies:
@@ -2163,6 +2233,36 @@ packages:
   /eslint-plugin-promise/4.3.1:
     resolution: {integrity: sha1-YUhd8qNZ4DFJ/a/AposOAwrSrEU=, tarball: eslint-plugin-promise/download/eslint-plugin-promise-4.3.1.tgz}
     engines: {node: '>=6'}
+    dev: true
+
+  /eslint-plugin-react-hooks/4.2.0_eslint@7.23.0:
+    resolution: {integrity: sha1-jCKcJo1GiVYzTJQ7tF/IYCgPVVY=, tarball: eslint-plugin-react-hooks/download/eslint-plugin-react-hooks-4.2.0.tgz}
+    engines: {node: '>=10'}
+    peerDependencies:
+      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+    dependencies:
+      eslint: 7.23.0
+    dev: true
+
+  /eslint-plugin-react/7.23.2_eslint@7.23.0:
+    resolution: {integrity: sha1-LSKRsPlcA3KLVYafARAikOeS1JQ=, tarball: eslint-plugin-react/download/eslint-plugin-react-7.23.2.tgz}
+    engines: {node: '>=4'}
+    peerDependencies:
+      eslint: ^3 || ^4 || ^5 || ^6 || ^7
+    dependencies:
+      array-includes: 3.1.3
+      array.prototype.flatmap: 1.2.4
+      doctrine: 2.1.0
+      eslint: 7.23.0
+      has: 1.0.3
+      jsx-ast-utils: 3.2.0
+      minimatch: 3.0.4
+      object.entries: 1.1.3
+      object.fromentries: 2.0.4
+      object.values: 1.1.3
+      prop-types: 15.7.2
+      resolve: 2.0.0-next.3
+      string.prototype.matchall: 4.0.4
     dev: true
 
   /eslint-scope/5.1.1:
@@ -2911,6 +3011,15 @@ packages:
 
   /ini/1.3.8:
     resolution: {integrity: sha1-op2kJbSIBvNHZ6Tvzjlyaa8oQyw=, tarball: ini/download/ini-1.3.8.tgz}
+    dev: true
+
+  /internal-slot/1.0.3:
+    resolution: {integrity: sha1-c0fjB97uovqsKsYgXUvH00ln9Zw=, tarball: internal-slot/download/internal-slot-1.0.3.tgz}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      get-intrinsic: 1.1.1
+      has: 1.0.3
+      side-channel: 1.0.4
     dev: true
 
   /is-accessor-descriptor/0.1.6:
@@ -3686,7 +3795,6 @@ packages:
 
   /js-tokens/4.0.0:
     resolution: {integrity: sha1-GSA/tZmR35jjoocFDUZHzerzJJk=, tarball: js-tokens/download/js-tokens-4.0.0.tgz}
-    dev: true
 
   /js-yaml/3.14.1:
     resolution: {integrity: sha1-2ugS/bOCX6MGYJqHFzg8UMNqBTc=, tarball: js-yaml/download/js-yaml-3.14.1.tgz}
@@ -3995,6 +4103,12 @@ packages:
     resolution: {integrity: sha1-uFmZV9pbXatk3uP+MW+ndFl9kOQ=, tarball: longest-streak/download/longest-streak-2.0.4.tgz}
     dev: true
 
+  /loose-envify/1.4.0:
+    resolution: {integrity: sha1-ce5R+nvkyuwaY4OffmgtgTLTDK8=, tarball: loose-envify/download/loose-envify-1.4.0.tgz}
+    hasBin: true
+    dependencies:
+      js-tokens: 4.0.0
+
   /lru-cache/6.0.0:
     resolution: {integrity: sha1-bW/mVw69lqr5D8rR2vo7JWbbOpQ=, tarball: lru-cache/download/lru-cache-6.0.0.tgz}
     engines: {node: '>=10'}
@@ -4145,7 +4259,7 @@ packages:
     dev: true
 
   /mime-db/1.47.0:
-    resolution: {integrity: sha1-jLMT5Zll08Bc+/iYkVomevRqM1w=, tarball: mime-db/download/mime-db-1.47.0.tgz}
+    resolution: {integrity: sha1-jLMT5Zll08Bc+/iYkVomevRqM1w=, tarball: mime-db/download/mime-db-1.47.0.tgz?cache=0&sync_timestamp=1617326646370&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmime-db%2Fdownload%2Fmime-db-1.47.0.tgz}
     engines: {node: '>= 0.6'}
     dev: true
 
@@ -4317,6 +4431,11 @@ packages:
     resolution: {integrity: sha1-R6ewFrqmi1+g7PPe4IqFxnmsZFU=, tarball: oauth-sign/download/oauth-sign-0.9.0.tgz}
     dev: true
 
+  /object-assign/4.1.1:
+    resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=, tarball: object-assign/download/object-assign-4.1.1.tgz}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /object-copy/0.1.0:
     resolution: {integrity: sha1-fn2Fi3gb18mRpBupde04EnVOmYw=, tarball: object-copy/download/object-copy-0.1.0.tgz}
     engines: {node: '>=0.10.0'}
@@ -4350,6 +4469,26 @@ packages:
       define-properties: 1.1.3
       has-symbols: 1.0.2
       object-keys: 1.1.1
+    dev: true
+
+  /object.entries/1.1.3:
+    resolution: {integrity: sha1-xgHH8Wi2I3RUGgfdvT4tXk93EaY=, tarball: object.entries/download/object.entries-1.1.3.tgz}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: 1.0.2
+      define-properties: 1.1.3
+      es-abstract: 1.18.0
+      has: 1.0.3
+    dev: true
+
+  /object.fromentries/2.0.4:
+    resolution: {integrity: sha1-JuG6XEVxxcbwiQzvRHMGZFahILg=, tarball: object.fromentries/download/object.fromentries-2.0.4.tgz}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: 1.0.2
+      define-properties: 1.1.3
+      es-abstract: 1.18.0
+      has: 1.0.3
     dev: true
 
   /object.pick/1.3.0:
@@ -4730,6 +4869,14 @@ packages:
       sisteransi: 1.0.5
     dev: true
 
+  /prop-types/15.7.2:
+    resolution: {integrity: sha1-UsQedbjIfnK52TYOAga5ncv/psU=, tarball: prop-types/download/prop-types-15.7.2.tgz?cache=0&sync_timestamp=1602658131764&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fprop-types%2Fdownload%2Fprop-types-15.7.2.tgz}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: 16.13.1
+    dev: true
+
   /psl/1.8.0:
     resolution: {integrity: sha1-kyb4vPsBOtzABf3/BWrM4CDlHCQ=, tarball: psl/download/psl-1.8.0.tgz}
     dev: true
@@ -4763,6 +4910,10 @@ packages:
   /quick-lru/4.0.1:
     resolution: {integrity: sha1-W4h48ROlgheEjGSCAmxz4bpXcn8=, tarball: quick-lru/download/quick-lru-4.0.1.tgz}
     engines: {node: '>=8'}
+    dev: true
+
+  /react-is/16.13.1:
+    resolution: {integrity: sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=, tarball: react-is/download/react-is-16.13.1.tgz}
     dev: true
 
   /react-is/17.0.2:
@@ -4822,9 +4973,21 @@ packages:
       strip-indent: 3.0.0
     dev: true
 
+  /redux-saga/1.1.3:
+    resolution: {integrity: sha1-nz5q69PJlLvA9pAaYl+aQrUdERI=, tarball: redux-saga/download/redux-saga-1.1.3.tgz}
+    dependencies:
+      '@redux-saga/core': 1.1.3
+    dev: false
+
+  /redux/4.0.5:
+    resolution: {integrity: sha1-TbXeWBbheJHeioDEJCMtBvBR2T8=, tarball: redux/download/redux-4.0.5.tgz}
+    dependencies:
+      loose-envify: 1.4.0
+      symbol-observable: 1.2.0
+    dev: false
+
   /regenerator-runtime/0.13.7:
     resolution: {integrity: sha1-ysLazIoepnX+qrrriugziYrkb1U=, tarball: regenerator-runtime/download/regenerator-runtime-0.13.7.tgz}
-    dev: true
 
   /regex-not/1.0.2:
     resolution: {integrity: sha1-H07OJ+ALC2XgJHpoEOaoXYOldSw=, tarball: regex-not/download/regex-not-1.0.2.tgz}
@@ -4832,6 +4995,14 @@ packages:
     dependencies:
       extend-shallow: 3.0.2
       safe-regex: 1.1.0
+    dev: true
+
+  /regexp.prototype.flags/1.3.1:
+    resolution: {integrity: sha1-fvNSro0VnnWMDq3Kb4/LTu8HviY=, tarball: regexp.prototype.flags/download/regexp.prototype.flags-1.3.1.tgz}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: 1.0.2
+      define-properties: 1.1.3
     dev: true
 
   /regexpp/3.1.0:
@@ -4968,6 +5139,13 @@ packages:
 
   /resolve/1.20.0:
     resolution: {integrity: sha1-YpoBP7P3B1XW8LeTXMHCxTeLGXU=, tarball: resolve/download/resolve-1.20.0.tgz}
+    dependencies:
+      is-core-module: 2.2.0
+      path-parse: 1.0.6
+    dev: true
+
+  /resolve/2.0.0-next.3:
+    resolution: {integrity: sha1-1BAWKT1KhYajnKXZtfFcvqH1XkY=, tarball: resolve/download/resolve-2.0.0-next.3.tgz}
     dependencies:
       is-core-module: 2.2.0
       path-parse: 1.0.6
@@ -5121,6 +5299,14 @@ packages:
     resolution: {integrity: sha1-1rkYHBpI05cyTISHHvvPxz/AZUs=, tarball: shellwords/download/shellwords-0.1.1.tgz}
     dev: true
     optional: true
+
+  /side-channel/1.0.4:
+    resolution: {integrity: sha1-785cj9wQTudRslxY1CkAEfpeos8=, tarball: side-channel/download/side-channel-1.0.4.tgz}
+    dependencies:
+      call-bind: 1.0.2
+      get-intrinsic: 1.1.1
+      object-inspect: 1.9.0
+    dev: true
 
   /signal-exit/3.0.3:
     resolution: {integrity: sha1-oUEMLt2PB3sItOJTyOrPyvBXRhw=, tarball: signal-exit/download/signal-exit-3.0.3.tgz}
@@ -5321,6 +5507,18 @@ packages:
       strip-ansi: 6.0.0
     dev: true
 
+  /string.prototype.matchall/4.0.4:
+    resolution: {integrity: sha1-YI8lXpPgchB/XeBm+Bot+3jPayk=, tarball: string.prototype.matchall/download/string.prototype.matchall-4.0.4.tgz}
+    dependencies:
+      call-bind: 1.0.2
+      define-properties: 1.1.3
+      es-abstract: 1.18.0
+      has-symbols: 1.0.2
+      internal-slot: 1.0.3
+      regexp.prototype.flags: 1.3.1
+      side-channel: 1.0.4
+    dev: true
+
   /string.prototype.trimend/1.0.4:
     resolution: {integrity: sha1-51rpDClCxjUEaGwYsoe0oLGkX4A=, tarball: string.prototype.trimend/download/string.prototype.trimend-1.0.4.tgz?cache=0&sync_timestamp=1614128065657&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstring.prototype.trimend%2Fdownload%2Fstring.prototype.trimend-1.0.4.tgz}
     dependencies:
@@ -5505,6 +5703,11 @@ packages:
   /svg-tags/1.0.0:
     resolution: {integrity: sha1-WPcc7jvVGbWdSyqEO2x95krAR2Q=, tarball: svg-tags/download/svg-tags-1.0.0.tgz}
     dev: true
+
+  /symbol-observable/1.2.0:
+    resolution: {integrity: sha1-wiaIrtTqs83C3+rLtWFmBWCgCAQ=, tarball: symbol-observable/download/symbol-observable-1.2.0.tgz}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /symbol-tree/3.2.4:
     resolution: {integrity: sha1-QwY30ki6d+B4iDlR+5qg7tfGP6I=, tarball: symbol-tree/download/symbol-tree-3.2.4.tgz}
@@ -5730,6 +5933,22 @@ packages:
     dependencies:
       is-typedarray: 1.0.0
     dev: true
+
+  /typescript-compare/0.0.2:
+    resolution: {integrity: sha1-fuQKQApAbC6gp+VR79MwkCHV9CU=, tarball: typescript-compare/download/typescript-compare-0.0.2.tgz}
+    dependencies:
+      typescript-logic: 0.0.0
+    dev: false
+
+  /typescript-logic/0.0.0:
+    resolution: {integrity: sha1-ZuvYKiVI8rREpDZnvsEgtJaJAZY=, tarball: typescript-logic/download/typescript-logic-0.0.0.tgz}
+    dev: false
+
+  /typescript-tuple/2.2.1:
+    resolution: {integrity: sha1-fZgT+0s1X2msVQMuA2Pouw8E2tI=, tarball: typescript-tuple/download/typescript-tuple-2.2.1.tgz}
+    dependencies:
+      typescript-compare: 0.0.2
+    dev: false
 
   /typescript/4.2.4:
     resolution: {integrity: sha1-hhC1l0feAo/aiYqK7w4QPxVtCWE=, tarball: typescript/download/typescript-4.2.4.tgz}
