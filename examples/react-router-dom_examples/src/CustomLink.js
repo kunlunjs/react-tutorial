@@ -14,7 +14,7 @@ export default function CustomLinkExample() {
   return (
     <Router>
       <div>
-        <OldSchoolMenuLink activeOnlyWhenExact={true} to="/" label="Home" />
+        <OldSchoolMenuLink activeOnlyWhenExact to="/" label="Home" />
         <OldSchoolMenuLink to="/about" label="About" />
 
         <hr />
@@ -33,7 +33,7 @@ export default function CustomLinkExample() {
 }
 
 function OldSchoolMenuLink({ label, to, activeOnlyWhenExact }) {
-  let match = useRouteMatch({
+  const match = useRouteMatch({
     path: to,
     exact: activeOnlyWhenExact
   })

@@ -26,7 +26,7 @@ export default function ModalGalleryExample() {
 }
 
 function ModalSwitch() {
-  let location = useLocation()
+  const location = useLocation()
 
   // This piece of state is set when one of the
   // gallery links is clicked. The `background` state
@@ -35,18 +35,28 @@ function ModalSwitch() {
   // use it as the location for the <Switch> so
   // we show the gallery in the background, behind
   // the modal.
-  let background = location.state && location.state.background
+  const background = location.state && location.state.background
 
   return (
     <div>
       <Switch location={background || location}>
-        <Route exact path="/" children={<Home />} />
-        <Route path="/gallery" children={<Gallery />} />
-        <Route path="/img/:id" children={<ImageView />} />
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/gallery">
+          <Gallery />
+        </Route>
+        <Route path="/img/:id">
+          <ImageView />
+        </Route>
       </Switch>
 
       {/* Show the modal when a background page is set */}
-      {background && <Route path="/img/:id" children={<Modal />} />}
+      {background && (
+        <Route path="/img/:id">
+          <Modal />
+        </Route>
+      )}
     </div>
   )
 }
@@ -101,7 +111,7 @@ function Home() {
 }
 
 function Gallery() {
-  let location = useLocation()
+  const location = useLocation()
 
   return (
     <div>
@@ -124,8 +134,8 @@ function Gallery() {
 }
 
 function ImageView() {
-  let { id } = useParams()
-  let image = IMAGES[parseInt(id, 10)]
+  const { id } = useParams()
+  const image = IMAGES[parseInt(id, 10)]
 
   if (!image) return <div>Image not found</div>
 
@@ -138,13 +148,13 @@ function ImageView() {
 }
 
 function Modal() {
-  let history = useHistory()
-  let { id } = useParams()
-  let image = IMAGES[parseInt(id, 10)]
+  const history = useHistory()
+  const { id } = useParams()
+  const image = IMAGES[parseInt(id, 10)]
 
   if (!image) return null
 
-  let back = e => {
+  const back = e => {
     e.stopPropagation()
     history.goBack()
   }

@@ -29,16 +29,22 @@ export default function PreventingTransitionsExample() {
       </ul>
 
       <Switch>
-        <Route path="/" exact children={<BlockingForm />} />
-        <Route path="/one" children={<h3>One</h3>} />
-        <Route path="/two" children={<h3>Two</h3>} />
+        <Route path="/" exact>
+          <BlockingForm />
+        </Route>
+        <Route path="/one">
+          <h3>One</h3>
+        </Route>
+        <Route path="/two">
+          <h3>Two</h3>
+        </Route>
       </Switch>
     </Router>
   )
 }
 
 function BlockingForm() {
-  let [isBlocking, setIsBlocking] = useState(false)
+  const [isBlocking, setIsBlocking] = useState(false)
 
   return (
     <form

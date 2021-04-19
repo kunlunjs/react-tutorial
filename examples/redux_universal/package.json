@@ -8,14 +8,7 @@
   },
   "dependencies": {
     "core-js": "^3.10.1",
-    "express": "^4.17.1",
-    "prop-types": "^15.7.2",
     "qs": "^6.10.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.3",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0",
     "serve-static": "^1.14.1"
   },
   "devDependencies": {

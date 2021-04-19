@@ -31,6 +31,6 @@ inquirer
   ])
   .then(answers => {
     shelljs.exec(
-      `cross-env REACT_APP_PAGE=${answers.page} react-scripts ${answers.command}`
+      `../../node_modules/.bin/cross-env REACT_APP_PAGE=${answers.page} ../../node_modules/.bin/react-scripts ${answers.command}`
     )
   })

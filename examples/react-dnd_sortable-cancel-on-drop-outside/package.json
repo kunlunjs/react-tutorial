@@ -1,0 +1,15 @@
+{
+  "name": "react-dnd_sortable-cancel-on-drop-outside",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "../../node_modules/react-scripts/.bin/react-scripts start",
+    "build": "../../node_modules/react-scripts/.bin/react-scripts build",
+    "test": "../../node_modules/react-scripts/.bin/react-scripts test --env=jsdom",
+    "eject": "../../node_modules/react-scripts/.bin/react-scripts eject"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -35,10 +35,14 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 0,
     '@typescript-eslint/no-use-before-define': 0,
     '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/no-empty-interface': 0,
+    'react/display-name': 0,
     'react-hooks/rules-of-hooks': 'error',
     'import/no-webpack-loader-syntax': 0,
     'react/prop-types': 0,
-    'react/react-in-jsx-scope': 0
+    'react/react-in-jsx-scope': 0,
+    // <Component boolProp />
+    'react/jsx-boolean-value': ['error', 'never', { always: ['personal'] }]
   },
   settings: {
     react: {

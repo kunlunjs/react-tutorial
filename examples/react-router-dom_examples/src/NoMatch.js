@@ -66,7 +66,7 @@ function WillMatch() {
 }
 
 function NoMatch() {
-  let location = useLocation()
+  const location = useLocation()
 
   return (
     <div>

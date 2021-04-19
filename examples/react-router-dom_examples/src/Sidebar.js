@@ -60,12 +60,15 @@ export default function SidebarExample() {
               // that requires you to render multiple things
               // in multiple places at the same URL is nothing
               // more than multiple <Route>s.
-              <Route
-                key={index}
-                path={route.path}
-                exact={route.exact}
-                children={<route.sidebar />}
-              />
+              // <Route
+              //   key={index}
+              //   path={route.path}
+              //   exact={route.exact}
+              //   children={<route.sidebar />}
+              // />
+              <Route key={index} path={route.path} exact={route.exact}>
+                <route.sidebar />
+              </Route>
             ))}
           </Switch>
         </div>
@@ -75,12 +78,9 @@ export default function SidebarExample() {
             {routes.map((route, index) => (
               // Render more <Route>s with the same paths as
               // above, but different components this time.
-              <Route
-                key={index}
-                path={route.path}
-                exact={route.exact}
-                children={<route.main />}
-              />
+              <Route key={index} path={route.path} exact={route.exact}>
+                <route.main />
+              </Route>
             ))}
           </Switch>
         </div>

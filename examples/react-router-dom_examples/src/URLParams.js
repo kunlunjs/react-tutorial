@@ -34,7 +34,9 @@ export default function ParamsExample() {
         </ul>
 
         <Switch>
-          <Route path="/:id" children={<Child />} />
+          <Route path="/:id">
+            <Child />
+          </Route>
         </Switch>
       </div>
     </Router>
@@ -44,7 +46,7 @@ export default function ParamsExample() {
 function Child() {
   // We can use the `useParams` hook here to access
   // the dynamic pieces of the URL.
-  let { id } = useParams()
+  const { id } = useParams()
 
   return (
     <div>

@@ -109,8 +109,8 @@ function useProvideAuth() {
 }
 
 function AuthButton() {
-  let history = useHistory()
-  let auth = useAuth()
+  const history = useHistory()
+  const auth = useAuth()
 
   return auth.user ? (
     <p>
@@ -131,7 +131,7 @@ function AuthButton() {
 // A wrapper for <Route> that redirects to the login
 // screen if you're not yet authenticated.
 function PrivateRoute({ children, ...rest }) {
-  let auth = useAuth()
+  const auth = useAuth()
   return (
     <Route
       {...rest}
@@ -160,12 +160,12 @@ function ProtectedPage() {
 }
 
 function LoginPage() {
-  let history = useHistory()
-  let location = useLocation()
-  let auth = useAuth()
+  const history = useHistory()
+  const location = useLocation()
+  const auth = useAuth()
 
-  let { from } = location.state || { from: { pathname: '/' } }
-  let login = () => {
+  const { from } = location.state || { from: { pathname: '/' } }
+  const login = () => {
     auth.signin(() => {
       history.replace(from)
     })

@@ -11,9 +11,9 @@ import { StaticRouter as Router, Route } from 'react-router-dom'
 // const app = express()
 //
 // app.get('*', (req, res) => {
-//   let staticContext = {}
+//   const staticContext = {}
 //
-//   let html = ReactDOMServer.renderToString(
+//   const html = ReactDOMServer.renderToString(
 //     <StaticRouter location={req.url} context={staticContext}>
 //       <App /> (includes the RouteStatus component below e.g. for 404 errors)
 //     </StaticRouter>

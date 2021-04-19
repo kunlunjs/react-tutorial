@@ -5,24 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./start",
-    "eject": "react-scripts eject",
-    "test": "react-scripts test --env=node --passWithNoTests"
+    "eject": "../../node_modules/react-scripts/.bin/react-scripts eject",
+    "test": "../../node_modules/react-scripts/.bin/react-scripts test --env=node --passWithNoTests"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^5.2.0",
-    "react-transition-group": "^4.4.1"
-  },
-  "devDependencies": {
-    "cross-env": "^7.0.3",
-    "glob": "^7.1.6",
-    "inquirer": "^8.0.0",
-    "react-scripts": "^4.0.3",
-    "shelljs": "^0.8.4",
-    "yargs-parser": "^20.2.7"
-  }
+  "license": "ISC"
 }

@@ -26,7 +26,7 @@ export default function AnimationExample() {
 }
 
 function AnimationApp() {
-  let location = useLocation()
+  const location = useLocation()
 
   return (
     <div style={styles.fill}>
@@ -47,8 +47,14 @@ function AnimationApp() {
           */}
           <CSSTransition key={location.key} classNames="fade" timeout={300}>
             <Switch location={location}>
-              <Route path="/hsl/:h/:s/:l" children={<HSL />} />
-              <Route path="/rgb/:r/:g/:b" children={<RGB />} />
+              {/* <Route path="/hsl/:h/:s/:l" children={<HSL />} /> */}
+              <Route path="/hsl/:h/:s/:l">
+                <HSL />
+              </Route>
+              {/* <Route path="/rgb/:r/:g/:b" children={<RGB />} /> */}
+              <Route path="/rgb/:r/:g/:b">
+                <RGB />
+              </Route>
             </Switch>
           </CSSTransition>
         </TransitionGroup>
@@ -66,7 +72,7 @@ function NavLink(props) {
 }
 
 function HSL() {
-  let { h, s, l } = useParams()
+  const { h, s, l } = useParams()
 
   return (
     <div
@@ -83,7 +89,7 @@ function HSL() {
 }
 
 function RGB() {
-  let { r, g, b } = useParams()
+  const { r, g, b } = useParams()
 
   return (
     <div

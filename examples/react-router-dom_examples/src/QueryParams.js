@@ -29,7 +29,7 @@ function useQuery() {
 }
 
 function QueryParamsDemo() {
-  let query = useQuery()
+  const query = useQuery()
 
   return (
     <div>
